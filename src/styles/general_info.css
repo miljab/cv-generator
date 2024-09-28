@@ -1,0 +1,13 @@
+.general-info {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 30%;
+  padding: 20px;
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
