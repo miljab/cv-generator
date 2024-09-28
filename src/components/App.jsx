@@ -36,6 +36,24 @@ function App() {
     setInfo(newInfo);
   };
 
+  const eduInfoChange = (id, key, value) => {
+    const newInfo = { ...info };
+    newInfo.edu[id][key] = value;
+    setInfo(newInfo);
+  };
+
+  const newEduInfo = () => {
+    const newInfo = { ...info };
+    newInfo.edu.push({
+      school: "",
+      degree: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+    });
+    setInfo(newInfo);
+  };
+
   return (
     <>
       <GeneralInfo info={info} setInfo={generalInfoChange}></GeneralInfo>
