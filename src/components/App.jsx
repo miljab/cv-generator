@@ -1,5 +1,6 @@
 import GeneralInfo from "./GeneralInfo";
 import { useState } from "react";
+import EducationalExperience from "./EducationalExperience";
 
 function App() {
   const [info, setInfo] = useState({
@@ -54,10 +55,22 @@ function App() {
     setInfo(newInfo);
   };
 
+  const deleteEduInfo = (id) => {
+    const newInfo = { ...info };
+    newInfo.edu.splice(id, 1);
+    setInfo(newInfo);
+  };
+
   return (
-    <>
+    <div className="inputs-div">
       <GeneralInfo info={info} setInfo={generalInfoChange}></GeneralInfo>
-    </>
+      <EducationalExperience
+        info={info}
+        changeInfo={eduInfoChange}
+        newInfo={newEduInfo}
+        deleteInfo={deleteEduInfo}
+      ></EducationalExperience>
+    </div>
   );
 }
 
