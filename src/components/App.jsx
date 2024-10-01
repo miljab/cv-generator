@@ -1,6 +1,7 @@
 import GeneralInfo from "./GeneralInfo";
 import { useState } from "react";
 import EducationalExperience from "./EducationalExperience";
+import PracticalExperience from "./PracticalExperience";
 
 function App() {
   const [info, setInfo] = useState({
@@ -61,16 +62,50 @@ function App() {
     setInfo(newInfo);
   };
 
+  const expInfoChange = (id, key, value) => {
+    const newInfo = { ...info };
+    newInfo.exp[id][key] = value;
+    setInfo(newInfo);
+  };
+
+  const newExpInfo = () => {
+    const newInfo = { ...info };
+    newInfo.exp.push({
+      company: "",
+      position: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+      description: "",
+    });
+    setInfo(newInfo);
+  };
+
+  const deleteExpInfo = (id) => {
+    const newInfo = { ...info };
+    newInfo.exp.splice(id, 1);
+    setInfo(newInfo);
+  };
+
   return (
-    <div className="inputs-div">
-      <GeneralInfo info={info} setInfo={generalInfoChange}></GeneralInfo>
-      <EducationalExperience
-        info={info}
-        changeInfo={eduInfoChange}
-        newInfo={newEduInfo}
-        deleteInfo={deleteEduInfo}
-      ></EducationalExperience>
-    </div>
+    <>
+      <h1>CV GENERATOR</h1>
+      <div className="inputs-div">
+        <GeneralInfo info={info} setInfo={generalInfoChange}></GeneralInfo>
+        <EducationalExperience
+          info={info}
+          changeInfo={eduInfoChange}
+          newInfo={newEduInfo}
+          deleteInfo={deleteEduInfo}
+        ></EducationalExperience>
+        <PracticalExperience
+          info={info}
+          changeInfo={expInfoChange}
+          newInfo={newExpInfo}
+          deleteInfo={deleteExpInfo}
+        ></PracticalExperience>
+      </div>
+    </>
   );
 }
 

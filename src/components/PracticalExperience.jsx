@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "../styles/educational_experience.css";
+import "../styles/practical_experience.css";
 
-function EduInfo({ edu, changeInfo, deleteInfo, id, last }) {
+function ExpInfo({ exp, changeInfo, deleteInfo, id, last }) {
   const [showButton, setShowButton] = useState(id === last ? false : true);
 
   const handleOnClick = () => {
@@ -11,33 +11,33 @@ function EduInfo({ edu, changeInfo, deleteInfo, id, last }) {
   return (
     <>
       <button
-        className={showButton ? "show-edu-button" : "hidden"}
+        className={showButton ? "show-exp-button" : "hidden"}
         onClick={handleOnClick}
       >
-        {edu.school}
+        {exp.company}
       </button>
-      <div className={showButton ? "hidden" : "edu-inputs-div"}>
+      <div className={showButton ? "hidden" : "exp-inputs-div"}>
         <label>
-          School name:
+          Company name:
           <input
             type="text"
-            value={edu.school}
-            onChange={(e) => changeInfo(id, "school", e.target.value)}
+            value={exp.company}
+            onChange={(e) => changeInfo(id, "company", e.target.value)}
           />
         </label>
         <label>
-          Degree:
+          Position:
           <input
             type="text"
-            value={edu.degree}
-            onChange={(e) => changeInfo(id, "degree", e.target.value)}
+            value={exp.position}
+            onChange={(e) => changeInfo(id, "position", e.target.value)}
           />
         </label>
         <label>
           Start date:
           <input
             type="text"
-            value={edu.startDate}
+            value={exp.startDate}
             onChange={(e) => changeInfo(id, "startDate", e.target.value)}
           />
         </label>
@@ -45,7 +45,7 @@ function EduInfo({ edu, changeInfo, deleteInfo, id, last }) {
           End date:
           <input
             type="text"
-            value={edu.endDate}
+            value={exp.endDate}
             onChange={(e) => changeInfo(id, "endDate", e.target.value)}
           />
         </label>
@@ -53,9 +53,16 @@ function EduInfo({ edu, changeInfo, deleteInfo, id, last }) {
           Location:
           <input
             type="text"
-            value={edu.location}
+            value={exp.location}
             onChange={(e) => changeInfo(id, "location", e.target.value)}
           />
+        </label>
+        <label>
+          Description:
+          <textarea
+            value={exp.description}
+            onChange={(e) => changeInfo(id, "description", e.target.value)}
+          ></textarea>
         </label>
         <div className="buttons-div">
           <button onClick={deleteInfo}>Delete</button>
@@ -66,20 +73,20 @@ function EduInfo({ edu, changeInfo, deleteInfo, id, last }) {
   );
 }
 
-function EducationalExperience({ info, changeInfo, newInfo, deleteInfo }) {
+function PracticalExperience({ info, changeInfo, newInfo, deleteInfo }) {
   return (
     <div className="info">
-      <h2>Education</h2>
-      {info.edu.map((edu, id) => {
+      <h2>Experience</h2>
+      {info.exp.map((exp, id) => {
         return (
-          <EduInfo
-            edu={edu}
+          <ExpInfo
+            exp={exp}
             key={id}
             id={id}
             changeInfo={changeInfo}
             deleteInfo={deleteInfo}
-            last={info.edu.length - 1}
-          ></EduInfo>
+            last={info.exp.length - 1}
+          ></ExpInfo>
         );
       })}
       <button onClick={newInfo} className="add-inputs-button">
@@ -89,4 +96,4 @@ function EducationalExperience({ info, changeInfo, newInfo, deleteInfo }) {
   );
 }
 
-export default EducationalExperience;
+export default PracticalExperience;

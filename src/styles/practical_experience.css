@@ -1,4 +1,4 @@
-.edu-inputs-div {
+.exp-inputs-div {
   display: flex;
   flex-direction: column;
   background-color: rgb(235, 235, 235);
@@ -7,10 +7,18 @@
   box-shadow: 2px 2px 15px 0px rgba(185, 185, 185, 1);
 }
 
-.show-edu-button {
+.show-exp-button {
   height: 50px;
   width: 100%;
   background-color: rgb(235, 235, 235);
   box-shadow: 2px 2px 15px 0px rgba(185, 185, 185, 1);
   border: none;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+  border-radius: 8px;
+  border: none;
+  padding: 0 8px;
 }
