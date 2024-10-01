@@ -1,0 +1,95 @@
+.CV {
+  background-color: white;
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0 auto;
+  box-shadow: 2px 2px 15px 0px rgb(34, 34, 34);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.personal-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #194580;
+  color: white;
+  height: 140px;
+  justify-content: center;
+  padding: 20px 40px;
+}
+
+.name {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.email,
+.phone {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.education-header,
+.experience-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #194580;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.education-element {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.school {
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.education-list,
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.education-list {
+  margin-bottom: 20px;
+}
+
+.school-name,
+.company-name {
+  font-weight: 700;
+}
+
+.experience-element {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.exp-date-and-location,
+.school-date-and-location {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exp-date-and-location {
+  grid-row: 1/3;
+}

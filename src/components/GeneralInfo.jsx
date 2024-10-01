@@ -9,7 +9,7 @@ function GeneralInfo({ info, setInfo }) {
           First name:
           <input
             type="text"
-            value={info.firstName}
+            value={info.general.firstName}
             onChange={(event) => {
               setInfo("firstName", event.target.value);
             }}
@@ -19,7 +19,7 @@ function GeneralInfo({ info, setInfo }) {
           Last name:
           <input
             type="text"
-            value={info.lastName}
+            value={info.general.lastName}
             onChange={(event) => {
               setInfo("lastName", event.target.value);
             }}
@@ -29,7 +29,7 @@ function GeneralInfo({ info, setInfo }) {
           Email:
           <input
             type="text"
-            value={info.email}
+            value={info.general.email}
             onChange={(event) => {
               setInfo("email", event.target.value);
             }}
@@ -39,7 +39,7 @@ function GeneralInfo({ info, setInfo }) {
           Phone number:
           <input
             type="text"
-            value={info.phone}
+            value={info.general.phone}
             onChange={(event) => {
               setInfo("phone", event.target.value);
             }}

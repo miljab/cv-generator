@@ -2,35 +2,65 @@ import GeneralInfo from "./GeneralInfo";
 import { useState } from "react";
 import EducationalExperience from "./EducationalExperience";
 import PracticalExperience from "./PracticalExperience";
+import CV from "./CV";
 
 function App() {
   const [info, setInfo] = useState({
     general: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
+      firstName: "Josephine",
+      lastName: "Meyers",
+      email: "josephine.meyers@mail.co.uk",
+      phone: "+44 3245 5521 5521",
     },
     edu: [
       {
-        school: "",
-        degree: "",
-        startDate: "",
-        endDate: "",
-        location: "",
+        school: "London City University",
+        degree: "Bachelors in Economics",
+        startDate: "08/2020",
+        endDate: "present",
+        location: "New York City, US",
       },
     ],
     exp: [
       {
-        company: "",
-        position: "",
-        startDate: "",
-        endDate: "",
-        location: "",
-        description: "",
+        company: "Umbrella Inc.",
+        position: "UX & UI Designer",
+        startDate: "08/2020",
+        endDate: "present",
+        location: "New York City, US",
+        description:
+          "Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android",
       },
     ],
   });
+
+  // const [info, setInfo] = useState({
+  //   general: {
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     phone: "",
+  //   },
+  //   edu: [
+  //     {
+  //       school: "",
+  //       degree: "",
+  //       startDate: "",
+  //       endDate: "",
+  //       location: "",
+  //     },
+  //   ],
+  //   exp: [
+  //     {
+  //       company: "",
+  //       position: "",
+  //       startDate: "",
+  //       endDate: "",
+  //       location: "",
+  //       description: "",
+  //     },
+  //   ],
+  // });
 
   const generalInfoChange = (key, value) => {
     const newInfo = { ...info };
@@ -90,20 +120,23 @@ function App() {
   return (
     <>
       <h1>CV GENERATOR</h1>
-      <div className="inputs-div">
-        <GeneralInfo info={info} setInfo={generalInfoChange}></GeneralInfo>
-        <EducationalExperience
-          info={info}
-          changeInfo={eduInfoChange}
-          newInfo={newEduInfo}
-          deleteInfo={deleteEduInfo}
-        ></EducationalExperience>
-        <PracticalExperience
-          info={info}
-          changeInfo={expInfoChange}
-          newInfo={newExpInfo}
-          deleteInfo={deleteExpInfo}
-        ></PracticalExperience>
+      <div className="container">
+        <div className="inputs-div">
+          <GeneralInfo info={info} setInfo={generalInfoChange}></GeneralInfo>
+          <EducationalExperience
+            info={info}
+            changeInfo={eduInfoChange}
+            newInfo={newEduInfo}
+            deleteInfo={deleteEduInfo}
+          ></EducationalExperience>
+          <PracticalExperience
+            info={info}
+            changeInfo={expInfoChange}
+            newInfo={newExpInfo}
+            deleteInfo={deleteExpInfo}
+          ></PracticalExperience>
+        </div>
+        <CV info={info}></CV>
       </div>
     </>
   );
