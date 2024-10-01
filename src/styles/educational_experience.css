@@ -1,0 +1,18 @@
+.hidden {
+  display: none !important;
+}
+
+.edu-inputs-div {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  gap: 20px;
+  border: 1px solid black;
+}
+
+.show-edu-button {
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
